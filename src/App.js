@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import './App.css'
 
-import AddTask from './AddTask'
-
 function App() {
   const [task, setTask] = useState('')
   const handleUpdateTask = e => setTask(e.target.value)
@@ -10,6 +8,7 @@ function App() {
   const [tasks, setTasks] = useState([])
   const handleAddTask = e => {
     e.preventDefault()
+    if (!task) return  // don't add empty task to array
     setTasks([...tasks, task])
     setTask('')
   }
@@ -17,21 +16,20 @@ function App() {
   return (
     <div className="App">
       {tasks.map((item, index) => (
-        <div key={index}>
+        <form onSubmit={handleAddTask} key={index}>
           <input type="checkbox" />
-          <input
-            type="text"
-            value={item}
-            placeholder="Add task"
-            onChange={handleUpdateTask}
-          />
-        </div>
+          <input type="text" value={item} onChange={handleUpdateTask} />
+        </form>
       ))}
-      <AddTask
-        task={task}
-        addTask={handleAddTask}
-        updateTask={handleUpdateTask}
-      />
+      <form onSubmit={handleAddTask}>
+        <input type="checkbox" />
+        <input
+          type="text"
+          value={task}
+          placeholder="Add task"
+          onChange={handleUpdateTask}
+        />
+      </form>
     </div>
   )
 }

@@ -22,7 +22,6 @@ function App() {
         </form>
       ))}
       <form onSubmit={handleAddTask}>
-        <input type="checkbox" />
         <input
           type="text"
           value={task}

@@ -28,6 +28,12 @@ function App() {
     setTasks(newTasks)
   }
 
+  const handleDeleteTask = index => {
+    const newTasks = [...tasks]
+    newTasks.splice(index, 1)
+    setTasks(newTasks)
+  }
+
   console.log('TASKS', tasks)
   return (
     <div className="App">
@@ -42,8 +48,9 @@ function App() {
             type="text"
             value={item.task}
             onChange={handleUpdateTask}
-            style={{ textDecoration: item.isComplete && 'line-through'}}
+            style={{ textDecoration: item.isComplete && 'line-through' }}
           />
+          <button onClick={() => handleDeleteTask(index)}>x</button>
         </form>
       ))}
       <form onSubmit={handleAddTask}>

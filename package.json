@@ -2,7 +2,9 @@
   "name": "google-keep-clone",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://dsnair.github.io/google-keep-clone/",
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-scripts": "2.1.5"
@@ -10,6 +12,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

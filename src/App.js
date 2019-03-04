@@ -9,8 +9,7 @@ function App() {
   const handleAddTask = e => {
     e.preventDefault()
     if (!task) return // don't add empty task to array
-    const taskObj = { task, isComplete: false }
-    setTasks([...tasks, taskObj])
+    setTasks([...tasks, { task, isComplete: false }])
     setTask('')
   }
 
@@ -34,7 +33,6 @@ function App() {
     setTasks(newTasks)
   }
 
-  console.log('TASKS', tasks)
   return (
     <div className="App">
       {tasks.map((item, index) => (

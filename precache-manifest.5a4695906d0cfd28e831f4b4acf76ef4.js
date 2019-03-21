@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "581a7b7a36021c230303",
-    "url": "/google-keep-clone/static/css/main.b5f47fae.chunk.css"
+    "revision": "b8bffa53d8f6cfee8b23",
+    "url": "/google-keep-clone/static/css/main.73e5d64d.chunk.css"
   },
   {
-    "revision": "581a7b7a36021c230303",
-    "url": "/google-keep-clone/static/js/main.581a7b7a.chunk.js"
+    "revision": "b8bffa53d8f6cfee8b23",
+    "url": "/google-keep-clone/static/js/main.b8bffa53.chunk.js"
   },
   {
     "revision": "6cf3d12ec703a2d2cd17",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/google-keep-clone/static/js/2.8704c045.chunk.js"
   },
   {
-    "revision": "6446b80158824c8e4801e8492b9c0610",
+    "revision": "ad09b6eac882d9eead57205a4dacfca1",
     "url": "/google-keep-clone/index.html"
   }
 ];

@@ -5,14 +5,14 @@ function App() {
   const [task, setTask] = useState('')
   const [tasks, setTasks] = useState([])
 
-  const handleAddTask = e => {
+  const handleAdd = e => {
     e.preventDefault()
     if (!task) return // don't add empty task to array
     setTasks([...tasks, { task, isComplete: false }])
     setTask('')
   }
 
-  const handleCompleteTask = index => {
+  const handleComplete = index => {
     const newTasks = [...tasks]
     newTasks.splice(index, 1, {
       task: tasks[index].task,
@@ -23,7 +23,16 @@ function App() {
 
   const handleUpdateTask = e => setTask(e.target.value)
 
-  const handleDeleteTask = index => {
+  const handleUpdateTasks = index => e => {
+    const newTasks = [...tasks]
+    newTasks.splice(index, 1, {
+      task: e.target.value,
+      isComplete: tasks[index].isComplete
+    })
+    setTasks(newTasks)
+  }
+
+  const handleDelete = index => {
     const newTasks = [...tasks]
     newTasks.splice(index, 1)
     setTasks(newTasks)
@@ -32,22 +41,22 @@ function App() {
   return (
     <div className="app">
       {tasks.map((item, index) => (
-        <form onSubmit={handleAddTask} className="tasksForm" key={index}>
+        <form onSubmit={handleAdd} className="tasksForm" key={index}>
           <div>
             <input
               type="checkbox"
               checked={item.isComplete}
-              onChange={() => handleCompleteTask(index)}
+              onChange={() => handleComplete(index)}
             />
             <input
               type="text"
               value={item.task}
-              onChange={handleUpdateTask}
+              onChange={handleUpdateTasks(index)}
               style={{ textDecoration: item.isComplete && 'line-through' }}
             />
           </div>
           <button
-            onClick={() => handleDeleteTask(index)}
+            onClick={() => handleDelete(index)}
             type="button"
             className="timesBtn"
           >
@@ -56,7 +65,7 @@ function App() {
         </form>
       ))}
 
-      <form onSubmit={handleAddTask} className="taskForm">
+      <form onSubmit={handleAdd} className="taskForm">
         <input
           type="text"
           value={task}

@@ -1,15 +1,33 @@
-.App {
-  text-align: center;
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.app {
+  min-width: 400px;
+  min-height: 200px;
+  padding: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.tasksForm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input[type='checkbox'] {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+input[type='text'] {
+  border: 0;
+  outline: none;
+  background-color: whitesmoke;
+  font-size: 15px;
+}
+
+button {
+  border: 0;
+  outline: none;
+  background-color: whitesmoke;
+  color: grey;
+  cursor: pointer;
 }

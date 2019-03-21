@@ -14,11 +14,6 @@ function App() {
 
   const handleCompleteTask = index => {
     const newTasks = [...tasks]
-    // newTasks.splice(index, 1)
-    // newTasks.push({
-    //   task: tasks[index].task,
-    //   isComplete: !tasks[index].isComplete
-    // })
     newTasks.splice(index, 1, {
       task: tasks[index].task,
       isComplete: !tasks[index].isComplete
@@ -51,7 +46,11 @@ function App() {
               style={{ textDecoration: item.isComplete && 'line-through' }}
             />
           </div>
-          <button onClick={() => handleDeleteTask(index)}>
+          <button
+            onClick={() => handleDeleteTask(index)}
+            type="button"
+            className="timesBtn"
+          >
             <i className="fas fa-times" />
           </button>
         </form>
@@ -65,6 +64,15 @@ function App() {
           placeholder="+ List Item"
         />
       </form>
+
+      <section className="menu">
+        <button>
+          <i className="far fa-trash-alt" />
+        </button>
+        <button>
+          <i className="far fa-clone" />
+        </button>
+      </section>
     </div>
   )
 }

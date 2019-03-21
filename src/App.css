@@ -4,6 +4,7 @@
   padding: 20px;
   border: 1px solid lightgrey;
   border-radius: 10px;
+  position: relative;
 }
 
 .tasksForm {
@@ -28,6 +29,16 @@ button {
   border: 0;
   outline: none;
   background-color: whitesmoke;
-  color: grey;
   cursor: pointer;
+  font-size: 14px;
+}
+
+.timesBtn {
+  color: grey;
+}
+
+.menu {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
 }

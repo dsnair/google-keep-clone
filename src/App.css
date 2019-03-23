@@ -19,6 +19,7 @@
   border: 0;
   outline: none;
   background-color: whitesmoke;
+  padding-left: 10px;
   font-size: 18px;
 }
 
@@ -26,6 +27,7 @@
   border: 0;
   outline: none;
   background-color: whitesmoke;
+  padding-left: 10px;
   font-size: 15px;
 }
 
@@ -38,9 +40,9 @@
   cursor: pointer;
 }
 
-.fa-square,
-.fa-check-square {
-  padding-right: 5px;
+.fa-plus {
+  padding: 0 5px 0 2px;
+  font-size: 12px;
 }
 
 .menu {

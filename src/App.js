@@ -62,11 +62,12 @@ function App() {
       ))}
 
       <form onSubmit={handleAdd} className="taskForm">
+        <i className="fas fa-plus" />
         <input
           type="text"
           value={task}
           onChange={handleUpdateTask}
-          placeholder="&#x2b; List Item"
+          placeholder="List Item"
           className="taskInput"
         />
       </form>

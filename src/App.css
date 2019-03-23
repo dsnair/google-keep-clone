@@ -23,6 +23,10 @@ form:focus-within {
   align-items: center;
 }
 
+.tasksForm:focus-within .fa-times {
+  display: block;
+}
+
 .tasksForm:hover .fa-times {
   display: block;
 }

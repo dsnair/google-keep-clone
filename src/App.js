@@ -39,29 +39,25 @@ function App() {
   }
 
   return (
-    <div className="app">
+    <>
       {tasks.map((item, index) => (
         <form onSubmit={handleAdd} className="tasksForm" key={index}>
           <div>
-            <input
-              type="checkbox"
-              checked={item.isComplete}
-              onChange={() => handleComplete(index)}
+            <i
+              className={
+                item.isComplete ? 'far fa-check-square' : 'far fa-square'
+              }
+              onClick={() => handleComplete(index)}
             />
             <input
               type="text"
               value={item.task}
               onChange={handleUpdateTasks(index)}
               style={{ textDecoration: item.isComplete && 'line-through' }}
+              className="tasksInput"
             />
           </div>
-          <button
-            onClick={() => handleDelete(index)}
-            type="button"
-            className="timesBtn"
-          >
-            <i className="fas fa-times" />
-          </button>
+          <i className="fas fa-times" onClick={() => handleDelete(index)} />
         </form>
       ))}
 
@@ -70,19 +66,16 @@ function App() {
           type="text"
           value={task}
           onChange={handleUpdateTask}
-          placeholder="+ List Item"
+          placeholder="&#x2b; List Item"
+          className="taskInput"
         />
       </form>
 
       <section className="menu">
-        <button>
-          <i className="far fa-trash-alt" />
-        </button>
-        <button>
-          <i className="far fa-clone" />
-        </button>
+        <i className="far fa-trash-alt" />
+        <i className="far fa-clone" />
       </section>
-    </div>
+    </>
   )
 }
 

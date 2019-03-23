@@ -1,9 +1,10 @@
-.app {
-  min-width: 400px;
+#root {
+  width: 500px;
   min-height: 200px;
   padding: 20px;
   border: 1px solid lightgrey;
   border-radius: 10px;
+  font-size: 18px;
   position: relative;
 }
 
@@ -11,30 +12,35 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 3px;
 }
 
-input[type='checkbox'] {
-  font-size: 20px;
-  cursor: pointer;
+.tasksInput {
+  border: 0;
+  outline: none;
+  background-color: whitesmoke;
+  font-size: 18px;
 }
 
-input[type='text'] {
+.taskInput {
   border: 0;
   outline: none;
   background-color: whitesmoke;
   font-size: 15px;
 }
 
-button {
+.fas,
+.far {
   border: 0;
   outline: none;
   background-color: whitesmoke;
+  color: grey;
   cursor: pointer;
-  font-size: 14px;
 }
 
-.timesBtn {
-  color: grey;
+.fa-square,
+.fa-check-square {
+  padding-right: 5px;
 }
 
 .menu {

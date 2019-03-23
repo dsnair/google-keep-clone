@@ -1,37 +1,44 @@
 #root {
   width: 500px;
   min-height: 200px;
-  padding: 20px;
+  padding: 20px 0;
   border: 1px solid lightgrey;
   border-radius: 10px;
   font-size: 18px;
   position: relative;
 }
 
+form {
+  padding: 5px 20px;
+}
+
+form:focus-within {
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+}
+
 .tasksForm {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 3px;
 }
 
 .tasksForm:hover .fa-times {
   display: block;
 }
 
-.tasksInput {
+input[type='text'] {
   border: 0;
   outline: none;
   background-color: whitesmoke;
   padding-left: 10px;
+}
+
+.tasksInput {
   font-size: 18px;
 }
 
 .taskInput {
-  border: 0;
-  outline: none;
-  background-color: whitesmoke;
-  padding-left: 10px;
   font-size: 15px;
 }
 
@@ -44,11 +51,6 @@
   cursor: pointer;
 }
 
-.fa-square:hover,
-.fa-check-square:hover {
-  color: black;
-}
-
 .fa-times {
   display: none;
 }
@@ -56,6 +58,11 @@
 .fa-plus {
   padding: 0 5px 0 2px;
   font-size: 12px;
+}
+
+.fa-square:hover,
+.fa-check-square:hover {
+  color: black;
 }
 
 .menu {

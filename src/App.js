@@ -54,21 +54,19 @@ function App() {
               value={item.task}
               onChange={handleUpdateTasks(index)}
               style={{ textDecoration: item.isComplete && 'line-through' }}
-              className="tasksInput"
             />
           </div>
           <i className="fas fa-times" onClick={() => handleDelete(index)} />
         </form>
       ))}
 
-      <form onSubmit={handleAdd} className="taskForm">
+      <form onSubmit={handleAdd}>
         <i className="fas fa-plus" />
         <input
           type="text"
           value={task}
           onChange={handleUpdateTask}
           placeholder="List Item"
-          className="taskInput"
         />
       </form>
 

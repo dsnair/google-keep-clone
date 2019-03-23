@@ -32,13 +32,10 @@ input[type='text'] {
   outline: none;
   background-color: whitesmoke;
   padding-left: 10px;
-}
-
-.tasksInput {
   font-size: 18px;
 }
 
-.taskInput {
+input[type='text']::placeholder {
   font-size: 15px;
 }
 

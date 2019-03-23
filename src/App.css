@@ -40,6 +40,11 @@
   cursor: pointer;
 }
 
+.fa-square:hover,
+.fa-check-square:hover {
+  color: black;
+}
+
 .fa-plus {
   padding: 0 5px 0 2px;
   font-size: 12px;

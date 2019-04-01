@@ -4,6 +4,7 @@ import './App.css'
 function App() {
   const [task, setTask] = useState('')
   const [tasks, setTasks] = useState([])
+  const [title, setTitle] = useState('')
 
   const handleAdd = e => {
     e.preventDefault()
@@ -38,8 +39,16 @@ function App() {
     setTasks(newTasks)
   }
 
+  const handleTitle = e => setTitle(e.target.value)
+
   return (
     <>
+      <input
+        type="text"
+        value={title}
+        onChange={handleTitle}
+        placeholder="Title"
+      />
       {tasks.map((item, index) => (
         <form onSubmit={handleAdd} className="tasksForm" key={index}>
           <div>
@@ -60,7 +69,7 @@ function App() {
         </form>
       ))}
 
-      <form onSubmit={handleAdd}>
+      <form onSubmit={handleAdd} className="taskForm">
         <i className="fas fa-plus" />
         <input
           type="text"

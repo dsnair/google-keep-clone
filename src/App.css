@@ -8,11 +8,11 @@
   position: relative;
 }
 
-form {
+.taskForm {
   padding: 5px 20px;
 }
 
-form:focus-within {
+.taskForm:focus-within {
   border-top: 1px solid lightgrey;
   border-bottom: 1px solid lightgrey;
 }
@@ -34,8 +34,9 @@ form:focus-within {
 input[type='text'] {
   border: 0;
   outline: none;
-  background-color: whitesmoke;
   padding-left: 10px;
+  width: 400px;
+  background-color: whitesmoke;
   font-size: 18px;
 }
 

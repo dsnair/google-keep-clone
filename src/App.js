@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
+import Title from './Title'
+import Menu from './Menu'
 import './App.css'
 
 function App() {
   const [task, setTask] = useState('')
   const [tasks, setTasks] = useState([])
-  const [title, setTitle] = useState('')
 
   const handleAdd = e => {
     e.preventDefault()
@@ -39,16 +40,10 @@ function App() {
     setTasks(newTasks)
   }
 
-  const handleTitle = e => setTitle(e.target.value)
-
   return (
     <>
-      <input
-        type="text"
-        value={title}
-        onChange={handleTitle}
-        placeholder="Title"
-      />
+      <Title />
+
       {tasks.map((item, index) => (
         <form onSubmit={handleAdd} className="tasksForm" key={index}>
           <div>
@@ -79,10 +74,7 @@ function App() {
         />
       </form>
 
-      <section className="menu">
-        <i className="far fa-trash-alt" />
-        <i className="far fa-clone" />
-      </section>
+      <Menu />
     </>
   )
 }

@@ -1,7 +1,31 @@
-#root {
+.app {
+  width: 100vw;
+}
+
+header {
+  border-bottom: 1px solid lightgrey;
+  height: 50px;
+  margin: 20px 0 50px 0;
+  display: flex;
+  align-items: center;
+}
+
+header img {
+  padding: 0 10px 0 20px;
+  height: 50px;
+  width: 50px;
+}
+
+header span {
+  color: dimgrey;
+  font-size: 24px;
+}
+
+.taskContainer {
   width: 500px;
   min-height: 300px;
   padding: 20px 0;
+  margin: auto;
   border: 1px solid lightgrey;
   border-radius: 10px;
   font-size: 18px;

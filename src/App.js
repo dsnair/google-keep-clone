@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Title from './Title'
 import Menu from './Menu'
+import logo from './logo.png'
 import './App.css'
 
 function App() {
@@ -41,41 +42,48 @@ function App() {
   }
 
   return (
-    <>
-      <Title />
+    <div className="app">
+      <header>
+        <img src={logo} alt="google keep logo" />
+        <span>Google Keep clone</span>
+      </header>
 
-      {tasks.map((item, index) => (
-        <form onSubmit={handleAdd} className="tasksForm" key={index}>
-          <div>
-            <i
-              className={
-                item.isComplete ? 'far fa-check-square' : 'far fa-square'
-              }
-              onClick={() => handleComplete(index)}
-            />
-            <input
-              type="text"
-              value={item.task}
-              onChange={handleUpdateTasks(index)}
-              style={{ textDecoration: item.isComplete && 'line-through' }}
-            />
-          </div>
-          <i className="fas fa-times" onClick={() => handleDelete(index)} />
+      <div className="taskContainer">
+        <Title />
+
+        {tasks.map((item, index) => (
+          <form onSubmit={handleAdd} className="tasksForm" key={index}>
+            <div>
+              <i
+                className={
+                  item.isComplete ? 'far fa-check-square' : 'far fa-square'
+                }
+                onClick={() => handleComplete(index)}
+              />
+              <input
+                type="text"
+                value={item.task}
+                onChange={handleUpdateTasks(index)}
+                style={{ textDecoration: item.isComplete && 'line-through' }}
+              />
+            </div>
+            <i className="fas fa-times" onClick={() => handleDelete(index)} />
+          </form>
+        ))}
+
+        <form onSubmit={handleAdd} className="taskForm">
+          <i className="fas fa-plus" />
+          <input
+            type="text"
+            value={task}
+            onChange={handleUpdateTask}
+            placeholder="List Item"
+          />
         </form>
-      ))}
 
-      <form onSubmit={handleAdd} className="taskForm">
-        <i className="fas fa-plus" />
-        <input
-          type="text"
-          value={task}
-          onChange={handleUpdateTask}
-          placeholder="List Item"
-        />
-      </form>
-
-      <Menu />
-    </>
+        <Menu />
+      </div>
+    </div>
   )
 }
 
